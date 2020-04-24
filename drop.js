@@ -13,12 +13,11 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("Connected to the Database");
 
-  // Create Table
-  var sql =
-    // "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255))";
-    "CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255))";
+  // Drop Table
+  var sql = "DROP TABLE IF EXISTS users";
   con.query(sql, function (err, res) {
     if (err) throw err;
-    console.log("Table has been created!");
+
+    console.log(res);
   });
 });
