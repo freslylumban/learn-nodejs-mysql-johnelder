@@ -17,9 +17,9 @@ con.connect(function (err) {
   var sql = "SELECT * FROM customers";
   con.query(sql, function (err, res, fields) {
     if (err) throw err;
-    console.log(res);
-    console.log(res[0]);
-    console.log(res[0].name);
-    console.log(`${res[0].name} | ${res[0].email}`);
+
+    for (let i=0; i<res.length; i++) {
+      console.log(`${res[i].name} | ${res[i].email}`);
+    }
   });
 });
