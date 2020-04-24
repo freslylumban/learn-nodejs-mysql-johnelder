@@ -13,9 +13,11 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("Connected to the Database");
 
-  // Create DATABASE (just one time)
-  con.query("CREATE DATABASE nodedb", function (err, res) {
+  // Create Table
+  var sql =
+    "CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255))";
+  con.query(sql, function (err, res) {
     if (err) throw err;
-    console.log("Database Created!");
+    console.log("Table has been created!");
   });
 });
