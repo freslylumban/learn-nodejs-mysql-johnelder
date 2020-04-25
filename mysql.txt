@@ -1,0 +1,50 @@
+CREATE DATABASE:
+  `CREATE DATABASE <nama-database>`
+
+CREATE TABLE:
+  `CREATE TABLE <nama-table> (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), email VARCHAR(255))`
+
+ALTER TABLE:
+  `ALTER TABLE <nama-table> ADD COLUMN address VARCHAR(255)`
+
+INSERT INTO TABLE:
+  `INSERT INTO <nama-table> (name, email, address) VALUES ('Fresly Sipahutar', 'freslylumban@gmail.com', 'Jln. Raya Serang')
+
+INSERT MANY INTO TABLE:
+  `INSERT INTO <nama-table> (name, email, address)
+    VALUES
+      ('Rosmelia Daeli', 'daelirosmelia@gmail.com', 'Jln. Kopo'),
+      ('Irene Oktavia', 'ireneoktavia@gmail.com', 'Jln. Kopo'),
+      ('Medi Audrey', 'mediaudrey@gmail.com', 'Jln. Kopo');`
+
+SELECT ALL:
+  `SELECT * FROM <nama-table>`
+
+SELECT SPECIFIC:
+  `SELECT id, name, address FROM <nama-table>`
+
+WHERE CLAUSE:
+  `SELECT * FROM <nama-table> WHERE id <= 4`  // RECOMMENDED SYNTAX
+  `SELECT * FROM <nama-table> WHERE name LIKE 'f%'`
+
+AND OR:
+  `SELECT * FROM <nama-table> WHERE name LIKE 'f%' OR id = 1`
+  `SELECT * FROM <nama-table> WHERE name LIKE 'f%' AND id = 1`
+
+WHERE VARIABLE:
+  `SELECT * FROM <nama-table> WHERE name LIKE ? OR id = ?`
+
+ORDER BY:
+  `SELECT name FROM <nama-table> ORDER BY id DESC`
+
+DELETE RECORD:
+  `DELETE FROM <nama-table> WHERE id = 4`
+
+UPDATE RECORD:
+  `UPDATE <nama-table> SET name = 'Fresly Sipahutar' WHERE id = 1`
+
+LIMIT:
+  `SELECT * FROM customers LIMIT 2`
+
+DROP TABLE:
+  `DROP TABLE IF EXISTS <nama-table>`
